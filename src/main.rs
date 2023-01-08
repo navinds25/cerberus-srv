@@ -27,7 +27,8 @@ async fn startsrv(config: Config) -> std::io::Result<()> {
     return HttpServer::new(move || {
         App::new()
             .data(database_pool.clone())
-            .configure(cerberus_web::app_config)
+            .configure(cerberus_web::app_config_v1)
+            //.configure(cerberus_web::app_config_v2)
     })
     .bind(config.address)?
     .run()

@@ -9,7 +9,7 @@ pub async fn health() -> HttpResponse {
 }
 
 /* app_config handles the routing for all endpoints */
-pub fn app_config(config: &mut web::ServiceConfig) {
+pub fn app_config_v1(config: &mut web::ServiceConfig) {
     let health_resource = web::resource("/v1/health").route(web::get().to(health));
     config.service(health_resource);
     /* password store resources: */

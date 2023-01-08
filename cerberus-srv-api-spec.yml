@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  title: Cerberus Server API
+  description: API spec for Cerberus Password Manager Server Endpoint
+  version: 0.0.1
+
+servers:
+  - url: http://localhost:5000/v1
+    description: localhost
+
+paths:
+  /health:
+    get:
+      summary: responds with ok if server is up
+      description: health check endpoint
+      responses:
+        '200':
+          description: health check successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: 
+                  health:
+                    type: string
+                    example: ok
+  #/ps/auth:
+    #post:
+     # summary: master password authentication for password store
+     # description: authenticates the user to enable access to the password store          
+                
+      #https://swagger.io/docs/specification/basic-structure/
